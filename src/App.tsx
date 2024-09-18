@@ -1,14 +1,37 @@
-import { useState } from 'react'
-import './App.css'
+import { BrowserRouter, Router, Routes, Route, Link } from 'react-router-dom';
+import './App.css';
 
-function App() {
+// Importing "Pages":
+import BlogPreviewCard from './pages/BlogPreviewCard';
+
+
+
+
+// Functionality:
+export default function App() {
 
 
   return (
-    <>
-        <h1>Daniel Godin's Front End Mentor Projects:</h1>
-    </>
+    <BrowserRouter>
+        <Routes>
+            <Route path='/' element={<HomePage />} />
+            <Route path='/blog-preview-card' element={<BlogPreviewCard />} />
+        </Routes>
+    </BrowserRouter>
   )
 }
 
-export default App
+function HomePage() {
+
+    return (
+        <>
+            <h1>This is the home page</h1>
+            <nav>
+                <ul>
+                    <li><Link to='/'>Home</Link></li>
+                    <li><Link to='/blog-preview-card'>Blog Preview Card</Link></li>
+                </ul>
+            </nav>
+        </>
+    )
+}
