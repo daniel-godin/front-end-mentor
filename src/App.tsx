@@ -3,6 +3,7 @@ import './App.css';
 
 // Importing "Pages":
 import BlogPreviewCard from './pages/BlogPreviewCard';
+import MortgageRepaymentCalculator from './pages/MortgageRepaymentCalculator';
 
 
 
@@ -10,28 +11,50 @@ import BlogPreviewCard from './pages/BlogPreviewCard';
 // Functionality:
 export default function App() {
 
+    const routes = linkArray.map(link => <Route path={link.link} element={link.componentName} /> )
 
-  return (
-    <BrowserRouter>
-        <Routes>
-            <Route path='/' element={<HomePage />} />
-            <Route path='/blog-preview-card' element={<BlogPreviewCard />} />
-        </Routes>
-    </BrowserRouter>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                {routes}
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 function HomePage() {
+
+    const links = linkArray.map(link => <li><Link to={link.link}>{link.name}</Link>{link.level > 0 && ' Level: ' + link.level}</li> )
 
     return (
         <>
             <h1>This is the home page</h1>
             <nav>
                 <ul>
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/blog-preview-card'>Blog Preview Card</Link></li>
+                    {links}
                 </ul>
             </nav>
         </>
     )
 }
+
+const linkArray = [
+    {
+        'link': '/',
+        'name': 'Home',
+        'componentName': <HomePage />,
+        'level': 0,
+    },
+    {
+        'link': '/blog-preview-card',
+        'name': 'Blog Preview Card',
+        'componentName': <BlogPreviewCard />,
+        'level': 1,
+    },
+    {
+        'link': '/mortgage-repayment-calculator',
+        'name': 'Mortgage Repayment Calculator',
+        'componentName': <MortgageRepaymentCalculator />,
+        'level': 2,
+    },
+];
