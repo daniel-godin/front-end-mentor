@@ -1,0 +1,71 @@
+:root {
+    --color-lime: hsl(61, 70%, 52%);
+    --color-red: hsl(4, 69%, 50%);
+    --color-white: hsl(0, 0%, 100%);
+    --color-slate-100: hsl(202, 86%, 94%);
+    --color-slate-300: hsl(203, 41%, 72%);
+    --color-slate-500: hsl(200, 26%, 54%);
+    --color-slate-700: hsl(200, 24%, 40%);
+    --color-slate-900: hsl(202, 55%, 16%);
+    --font-size: 16px;
+    --font-family: 'Plus Jakarta Sans';
+    --font-weight-500: 500;
+    --font-weight-700: 700;
+    --size-desktop: 1440px;
+    --size-mobile: 375px;
+}
+
+#mortgageRepaymentCalculatorContainer {
+    margin: 0;
+    padding: 0;
+    height: 100dvh;
+    width: 100dvw;
+
+    background-color: var(--color-slate-100);
+
+    display: grid;
+    place-items: center;
+}
+
+#container {
+    margin: 0;
+    padding: 0;
+
+    background-color: var(--color-white);
+    border: none;
+    border-radius: 15px;
+
+    display: flex;
+}
+
+#calculatorContainer {
+    margin: 0;
+    padding: 15px;
+
+    width: 325px;
+
+    background-color: var(--color-white);
+
+    border: none;
+    border-radius: 15px 0 0 15px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#resultsContainer {
+    margin: 0;
+    padding: 15px;
+
+    width: 325px;
+
+    background-color: var(--color-slate-900);
+
+    border: none;
+    border-radius: 0 15px 15px 0;
+
+    @media (min-width: 700px) {
+        border-bottom-left-radius: 40px;
+    }
+}
