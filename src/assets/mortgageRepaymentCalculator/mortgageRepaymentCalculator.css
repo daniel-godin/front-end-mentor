@@ -15,6 +15,11 @@
     --size-mobile: 375px;
 }
 
+@font-face {
+    font-family: 'Plus Jakarta Sans';
+    src: url(./fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
 #mortgageRepaymentCalculatorContainer {
     margin: 0;
     padding: 0;
@@ -42,7 +47,7 @@
     margin: 0;
     padding: 15px;
 
-    width: 325px;
+    width: 400px;
 
     background-color: var(--color-white);
 
@@ -54,16 +59,41 @@
     gap: 15px;
 }
 
+#calculatorContainer > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#formCalculator {
+
+    display: flex;
+    flex-direction: column;
+}
+
+#inputContainer {
+    display: flex;
+}
+
 #resultsContainer {
     margin: 0;
     padding: 15px;
 
-    width: 325px;
+    width: 400px;
 
     background-color: var(--color-slate-900);
+    color: var(--color-white);
 
     border: none;
     border-radius: 0 15px 15px 0;
+
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    place-content: center;
+    text-align: center;
+    gap: 1rem;
+
 
     @media (min-width: 700px) {
         border-bottom-left-radius: 40px;
